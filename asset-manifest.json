@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "mp04499.github.io/CMS/static/css/main.460e62d4.chunk.css",
-    "main.js": "mp04499.github.io/CMS/static/js/main.5fe4eca2.chunk.js",
-    "main.js.map": "mp04499.github.io/CMS/static/js/main.5fe4eca2.chunk.js.map",
-    "runtime~main.js": "mp04499.github.io/CMS/static/js/runtime~main.ddd86bcd.js",
-    "runtime~main.js.map": "mp04499.github.io/CMS/static/js/runtime~main.ddd86bcd.js.map",
-    "static/css/2.61606d75.chunk.css": "mp04499.github.io/CMS/static/css/2.61606d75.chunk.css",
-    "static/js/2.d1ed0270.chunk.js": "mp04499.github.io/CMS/static/js/2.d1ed0270.chunk.js",
-    "static/js/2.d1ed0270.chunk.js.map": "mp04499.github.io/CMS/static/js/2.d1ed0270.chunk.js.map",
-    "index.html": "mp04499.github.io/CMS/index.html",
-    "precache-manifest.249eea17afe65b7d2b653e237cb227c7.js": "mp04499.github.io/CMS/precache-manifest.249eea17afe65b7d2b653e237cb227c7.js",
-    "service-worker.js": "mp04499.github.io/CMS/service-worker.js",
-    "static/css/2.61606d75.chunk.css.map": "mp04499.github.io/CMS/static/css/2.61606d75.chunk.css.map",
-    "static/css/main.460e62d4.chunk.css.map": "mp04499.github.io/CMS/static/css/main.460e62d4.chunk.css.map",
-    "static/media/all.css": "mp04499.github.io/CMS/static/media/fa-solid-900.ff8d9f8a.ttf"
+    "main.css": "/CMS/static/css/main.460e62d4.chunk.css",
+    "main.js": "/CMS/static/js/main.a92f7bad.chunk.js",
+    "main.js.map": "/CMS/static/js/main.a92f7bad.chunk.js.map",
+    "runtime~main.js": "/CMS/static/js/runtime~main.9b5e236e.js",
+    "runtime~main.js.map": "/CMS/static/js/runtime~main.9b5e236e.js.map",
+    "static/css/2.e232da34.chunk.css": "/CMS/static/css/2.e232da34.chunk.css",
+    "static/js/2.fe8cc164.chunk.js": "/CMS/static/js/2.fe8cc164.chunk.js",
+    "static/js/2.fe8cc164.chunk.js.map": "/CMS/static/js/2.fe8cc164.chunk.js.map",
+    "index.html": "/CMS/index.html",
+    "precache-manifest.d035036d0b9567aae53dca710ec8b47d.js": "/CMS/precache-manifest.d035036d0b9567aae53dca710ec8b47d.js",
+    "service-worker.js": "/CMS/service-worker.js",
+    "static/css/2.e232da34.chunk.css.map": "/CMS/static/css/2.e232da34.chunk.css.map",
+    "static/css/main.460e62d4.chunk.css.map": "/CMS/static/css/main.460e62d4.chunk.css.map",
+    "static/media/all.css": "/CMS/static/media/fa-solid-900.ff8d9f8a.ttf"
   }
 }
