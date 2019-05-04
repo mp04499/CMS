@@ -1,0 +1,17 @@
+.Pokedex {
+    display: grid;
+    width: 540px;
+    grid-template-columns: 120px 120px 120px 120px;
+    column-gap: 150px;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.Pokedex :first-child {
+    align-self: center;
+}
+
+.Pokedex-winner {
+    color: lightseagreen;
+    text-align: center;
+}
