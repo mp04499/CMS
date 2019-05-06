@@ -8,16 +8,15 @@ const ArticleList = () => {
 
     return (
       articles.slice(0, 5).map(article =>
-        <div>
-          <Article
-            image={article.urlToImage}
-            url={article.url}
-            title={article.title}
-            author={article.author}
-            description={article.description}
-            publishedAt={article.publishedAt}
-          />
-        </div>)
+        <Article
+          image={article.urlToImage}
+          url={article.url}
+          title={article.title}
+          author={article.author}
+          description={article.description}
+          publishedAt={article.publishedAt}
+        />
+      )
     )
   }
 ;
