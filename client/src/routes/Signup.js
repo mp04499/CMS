@@ -2,12 +2,12 @@ import React from 'react';
 import useInput from '../components/hooks/useInput';
 import '../css/Signup.css';
 
-export default function Signup() {
+const Signup = () => {
 
-  const [email, updateEmail, resetEmail] = useInput('');
-  const [password, updatePassword, resetPassword] = useInput('');
-  const [confirmPassword, updateConfirmPassword, resetConfirmPassword] = useInput('');
-  const [username, updateUsername, resetUsername] = useInput('');
+  const [email, updateEmail] = useInput('');
+  const [password, updatePassword] = useInput('');
+  const [confirmPassword, updateConfirmPassword] = useInput('');
+  const [username, updateUsername] = useInput('');
 
   return (
     <div className={"SignUp"} style={{width: "500px", margin: "0 auto"}}>
@@ -15,7 +15,7 @@ export default function Signup() {
         <p className="control has-icons-left has-icons-right">
           <input className="input" type="email" placeholder="Email" value={email} onChange={updateEmail}/>
           <span className="icon is-small is-left">
-      <i className="fas fa-envelope"></i>
+      <i className="fas fa-envelope"/>
               </span>
         </p>
       </div>
@@ -23,7 +23,7 @@ export default function Signup() {
         <p className="control has-icons-left">
           <input className="input" type="text" placeholder="Username" value={username} onChange={updateUsername}/>
           <span className="icon is-small is-left">
-      <i className="fas fa-user"></i>
+      <i className="fas fa-user"/>
     </span>
         </p>
       </div>
@@ -31,7 +31,7 @@ export default function Signup() {
         <p className="control has-icons-left">
           <input className="input" type="password" placeholder="Password" value={password} onChange={updatePassword}/>
           <span className="icon is-small is-left">
-      <i className="fas fa-lock"></i>
+      <i className="fas fa-lock"/>
     </span>
         </p>
       </div>
@@ -42,7 +42,7 @@ export default function Signup() {
                  value={confirmPassword}
                  onChange={updateConfirmPassword}/>
           <span className="icon is-small is-left">
-      <i className="fas fa-lock"></i>
+      <i className="fas fa-lock"/>
     </span>
         </p>
       </div>
@@ -55,4 +55,6 @@ export default function Signup() {
       </div>
     </div>
   );
-}
+};
+
+export default Signup;

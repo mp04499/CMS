@@ -1,22 +1,23 @@
 import Header from './Header';
 import Foot from './Foot';
+import {NotificationProvider} from "./contexts/NotificationContext";
+import {ArticleProvider} from "./contexts/ArticleContext";
 import 'bulma/css/bulma.css'
 import '@fortawesome/fontawesome-free/css/all.css'
-import React, {Component} from 'react';
+import React from 'react';
 
-class Template extends Component {
-  render() {
-    return (
-      <div>
-        <Header/>
-        <div style={{padding: '100px', marginBottom: "60px"}}>
-          {this.props.children}
-        </div>
-        <Foot/>
+const Template = props => {
+  return (
+    <NotificationProvider>
+      <Header/>
+      <div style={{padding: '100px', marginBottom: "60px"}}>
+        <ArticleProvider>
+          {props.children}
+        </ArticleProvider>
       </div>
-    );
-  }
-
-}
+      <Foot/>
+    </NotificationProvider>
+  );
+};
 
 export default Template;

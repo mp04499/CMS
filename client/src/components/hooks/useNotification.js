@@ -1,22 +1,23 @@
 import {useState} from "react";
+import uuid from 'uuid/v4';
 
 
 export default function Notifications(initial = []) {
 
   const [notifications, setNotifications] = useState(initial);
+  return {
+    notifications,
 
-  const addNotifications = () => {
-    setNotifications([...notifications, initial])
-  };
+    addNotifications: newNotificationText => {
+      setNotifications([...notifications, {id: uuid(), text: newNotificationText}])
+    },
 
-  const removeNotification = e => {
-    let newNotifications = notifications.filter(n =>
-      n.id != e.target.id
-    );
-    console.log(newNotifications);
-    setNotifications(newNotifications);
-  };
+    removeNotification: notificationId => {
+      const newNotifications = notifications.filter(n =>
+        n.id !== notificationId
+      );
 
-  return [notifications, addNotifications, removeNotification];
-
+      setNotifications(newNotifications);
+    }
+  }
 }
