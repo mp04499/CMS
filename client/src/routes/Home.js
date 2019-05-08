@@ -7,7 +7,7 @@ const Home = () => {
   const [email, updateEmail] = useInput('');
   const [password, updatePassword] = useInput('');
   return (
-    <div className={"Home"} style={{width: "500px", margin: "0 auto"}}>
+    <div className={"Home container"}>
       <div className="field" style={{paddingTop: "70px", width: "300px", margin: "0 auto"}}>
         <p className="control has-icons-left has-icons-right">
           <input className="input" type="email" placeholder="Email" value={email} onChange={updateEmail}/>

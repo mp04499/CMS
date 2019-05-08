@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Router} from 'react-router-dom'
 import {createBrowserHistory} from 'history';
+import 'bulma/css/bulma.css';
+import '@fortawesome/fontawesome-free/css/all.css';
 import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
+import {Router} from "react-router-dom";
 
 const history = createBrowserHistory();
 ReactDOM.render(
   <Router history={history}>
-    <BrowserRouter basename="/CMS">
-      <App/>
-    </BrowserRouter>
+    {/*<BrowserRouter basename="/CMS">*/}
+    <App/>
+    {/*</BrowserRouter>*/}
   </Router>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

@@ -10,7 +10,7 @@ const Signup = () => {
   const [username, updateUsername] = useInput('');
 
   return (
-    <div className={"SignUp"} style={{width: "500px", margin: "0 auto"}}>
+    <div className={"SignUp container"}>
       <div className="field" style={{paddingTop: "70px", width: "300px", margin: "0 auto"}}>
         <p className="control has-icons-left has-icons-right">
           <input className="input" type="email" placeholder="Email" value={email} onChange={updateEmail}/>

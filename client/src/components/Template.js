@@ -2,8 +2,7 @@ import Header from './Header';
 import Foot from './Foot';
 import {NotificationProvider} from "./contexts/NotificationContext";
 import {ArticleProvider} from "./contexts/ArticleContext";
-import 'bulma/css/bulma.css'
-import '@fortawesome/fontawesome-free/css/all.css'
+import {FeedProvider} from "./contexts/FeedContext";
 import React from 'react';
 
 const Template = props => {
@@ -12,7 +11,9 @@ const Template = props => {
       <Header/>
       <div style={{padding: '100px', marginBottom: "60px"}}>
         <ArticleProvider>
-          {props.children}
+          <FeedProvider>
+            {props.children}
+          </FeedProvider>
         </ArticleProvider>
       </div>
       <Foot/>

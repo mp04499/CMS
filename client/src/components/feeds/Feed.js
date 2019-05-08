@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {memo} from 'react';
 
-const Feed = () => {
+const Feed = ({name, at, text}) => {
 
   return (
     <div className="box">
@@ -13,12 +13,10 @@ const Feed = () => {
         <div className="media-content">
           <div className="content">
             <p>
-              <strong>John Smith</strong>
-              <small>@johnsmith</small>
-              <small>31m</small>
+              <strong>{name}</strong>
+              <small>{at}</small>
               <br/>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla
-              egestas. Nullam condimentum luctus turpis.
+              {text}
             </p>
           </div>
           <nav className="level is-mobile">
@@ -46,4 +44,4 @@ const Feed = () => {
   )
 };
 
-export default Feed;
+export default memo(Feed);

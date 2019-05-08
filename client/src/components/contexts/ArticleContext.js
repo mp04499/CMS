@@ -5,13 +5,16 @@ export const ArticleContext = createContext();
 
 export const ArticleProvider = props => {
 
-  const [showNews, setShowNews] = useState(false);
+  const [showNews, setShowNews] = useState(true);
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     async function fetchdata() {
       axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=d5342e381e0748ada294675b8bca5fef')
-        .then(response => setArticles(response.data.articles));
+        .then(response => {
+          setArticles(response.data.articles);
+          setShowNews(false)
+        });
       if (showNews)
         setShowNews(!showNews);
 

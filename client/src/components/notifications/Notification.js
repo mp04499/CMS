@@ -1,17 +1,17 @@
-import {NotificationContext} from "../contexts/NotificationContext";
-import React, {useContext} from "react";
+import {DispatchContext} from "../contexts/NotificationContext";
+import React, {memo, useContext} from "react";
 import '../../css/Me.css';
 
 const Notification = ({id, text}) => {
 
-  const {removeNotification} = useContext(NotificationContext);
+  const dispatch = useContext(DispatchContext);
 
   return (
     <div key={id} className="notification" style={{height: "70px"}}>
-      <button className="delete" key={id} id={id} onClick={() => removeNotification(id)}/>
+      <button className="delete" key={id} id={id} onClick={() => dispatch({type: "REMOVE", id: id})}/>
       {text}
     </div>
   )
 };
 
-export default Notification;
+export default memo(Notification);

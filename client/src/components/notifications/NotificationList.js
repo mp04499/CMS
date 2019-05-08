@@ -7,7 +7,7 @@ import '../../css/Notification.css';
 
 const NotificationList = () => {
 
-  const {notifications} = useContext(NotificationContext);
+  const notifications = useContext(NotificationContext);
 
   return (
     <TransitionGroup>

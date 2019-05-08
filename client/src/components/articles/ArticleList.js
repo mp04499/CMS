@@ -9,6 +9,7 @@ const ArticleList = () => {
     return (
       articles.slice(0, 5).map(article =>
         <Article
+          key={article.url}
           image={article.urlToImage}
           url={article.url}
           title={article.title}

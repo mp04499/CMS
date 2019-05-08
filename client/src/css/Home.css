@@ -2,10 +2,9 @@
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    width: 600px;
+    width: 400px;
     height: 300px;
     float: none;
-    margin: 0 auto 10px;
     -webkit-animation: slide-in-left .5s cubic-bezier(.25, .46, .45, .94) both;
     animation: slide-in-left .5s cubic-bezier(.25, .46, .45, .94) both
 }
@@ -42,7 +41,4 @@
 }
 
 /* Add some padding inside the card container */
-.container {
-    padding-top: 50000px;
-    width: 300px;
-}
+

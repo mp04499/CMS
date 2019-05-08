@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 
 const Article = ({image, title, author, description, url, publishedAt}) => {
 
@@ -27,4 +27,4 @@ const Article = ({image, title, author, description, url, publishedAt}) => {
   )
 };
 
-export default Article;
+export default memo(Article);
