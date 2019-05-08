@@ -12,7 +12,7 @@ const FeedTile = () => {
   const dispatch = useContext(DispatchContext);
 
   const post = () => {
-    if (message.length > 0) {
+    if (message.trim().length > 0) {
       dispatch({type: "ADD", name: "John Smith", at: "@johnsmith", text: message});
       setActive(!active);
       reset();

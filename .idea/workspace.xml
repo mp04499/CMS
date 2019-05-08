@@ -2,53 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="639fcc00-2327-4424-8204-e0114a1e110a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/articles/ArticleTile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/contexts/FeedContext.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/feeds/FeedTile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/notifications/NotificationTile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/reducers/FeedReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/reducers/NotificationReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/css/Article.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/css/Feed.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Template.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Template.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/articles/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/articles/Article.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/articles/ArticleList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/articles/ArticleList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/contexts/ArticleContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/contexts/ArticleContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/contexts/NotificationContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/contexts/NotificationContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/excersises/Box.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/excersises/Clicker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/excersises/Coin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/excersises/CoinFlipper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/excersises/Die.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/excersises/Lottery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/excersises/LottoBall.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/excersises/Pokecard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/excersises/Pokedex.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/excersises/Pokegame.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/excersises/Randomizer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/excersises/RollDice.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/feeds/Feed.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/feeds/Feed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/feeds/FeedList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/feeds/FeedList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/hooks/useNotification.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/notifications/Notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/notifications/Notification.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/notifications/NotificationList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/notifications/NotificationList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/css/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/css/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/css/Notification.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/css/Notification.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/css/Signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/css/Signup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/css/excersises/Box.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/css/excersises/CoinFlipper.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/css/excersises/Lottery.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/css/excersises/LottoBall.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/css/excersises/Pokecard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/css/excersises/Pokedex.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/css/excersises/RollDice.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/feeds/FeedTile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/feeds/FeedTile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/routes/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/routes/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/routes/Me.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/routes/Me.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/routes/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/routes/Signup.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -124,23 +79,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="336">
+              <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/feeds/FeedTile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
+            <state relative-caret-position="84">
+              <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -212,13 +167,13 @@
         <option value="$PROJECT_DIR$/client/src/routes/Me.js" />
         <option value="$PROJECT_DIR$/client/src/components/feeds/Feed.js" />
         <option value="$PROJECT_DIR$/client/src/components/Header.js" />
-        <option value="$PROJECT_DIR$/client/src/index.js" />
         <option value="$PROJECT_DIR$/client/src/components/articles/ArticleTile.js" />
         <option value="$PROJECT_DIR$/client/src/css/Article.css" />
         <option value="$PROJECT_DIR$/client/src/css/Notification.css" />
         <option value="$PROJECT_DIR$/client/src/components/notifications/NotificationTile.js" />
         <option value="$PROJECT_DIR$/client/src/css/Feed.css" />
         <option value="$PROJECT_DIR$/client/src/components/feeds/FeedTile.js" />
+        <option value="$PROJECT_DIR$/client/src/index.js" />
       </list>
     </option>
   </component>
@@ -356,28 +311,28 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557000873554</updated>
-      <workItem from="1557000878613" duration="46639000" />
+      <workItem from="1557000878613" duration="47727000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46639000" />
+    <option name="totallyTimeSpent" value="47727000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="GraphQL" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32923833" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32923833" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32923833" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32923833" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -648,16 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/routes/Home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
@@ -718,8 +663,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/feeds/FeedTile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
+        <state relative-caret-position="84">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
         </state>
       </provider>
     </entry>
