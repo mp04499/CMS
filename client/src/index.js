@@ -11,7 +11,7 @@ import {BrowserRouter, Router} from "react-router-dom";
 const history = createBrowserHistory();
 ReactDOM.render(
   <Router history={history}>
-    <BrowserRouter {/*basename="/CMS"*/}>
+    <BrowserRouter>
       <App/>
     </BrowserRouter>
   </Router>, document.getElementById('root'));

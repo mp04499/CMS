@@ -10,11 +10,9 @@ export const ArticleProvider = props => {
 
   useEffect(() => {
     async function fetchdata() {
-      axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=d5342e381e0748ada294675b8bca5fef')
-        .then(response => {
-          setArticles(response.data.articles);
-          setShowNews(false)
-        });
+      await callBackendAPI();
+      setShowNews(false);
+
       if (showNews)
         setShowNews(!showNews);
 
@@ -24,6 +22,11 @@ export const ArticleProvider = props => {
       fetchdata();
     }, 3000);
   }, [showNews]);
+
+  const callBackendAPI = () => {
+    axios.get("http://localhost:9000/articles?country=us")
+    .then(response => setArticles(response.data))
+  };
 
   return (
     <ArticleContext.Provider value={{showNews, setShowNews, articles, setArticles}}>

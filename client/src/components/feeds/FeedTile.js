@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {useContext, useState} from 'react';
 import FeedList from "./FeedList";
 import useInput from "../hooks/useInput";
@@ -65,9 +66,9 @@ const FeedTile = () => {
           <div className={"card"}>
             <div className={"card-header"}>
               <nav className={"level"}>
-                <p className="level-item has-text-centered">
+                <div className="level-item has-text-centered">
                   <h4 className={"title is-4"}>Post Message</h4>
-                </p>
+                </div>
               </nav>
             </div>
             <div className={"card-content"}>
