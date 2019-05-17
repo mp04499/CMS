@@ -1,0 +1,9 @@
+{
+    "env": {
+        "MONGO_USER": "User Here",
+        "MONGO_PASSWORD": "Password Here",
+        "MONGO_DB": "cms-test",
+        "MONGO_URL": "mongodb://127.0.0.1:27017/",
+        "SECRET_KEY": "secretkeyhere"
+    }
+}
