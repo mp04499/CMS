@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const validator = require('validator');
+const argon2 = require('argon2');
 
 const userSchema = new Schema({
     username: {
@@ -38,6 +39,10 @@ const userSchema = new Schema({
         }
     ]
 });
+
+userSchema.methods.confirmPassword = async password => {
+    console.log(this)
+}
 
 module.exports = mongoose.model('User', userSchema);
 

@@ -20,8 +20,9 @@ const resolvers = {
         async post(root, { id }, context) {
             return await Post.findById(id);
         },
-        async posts(root, args, context) {
-            return await Post.find({});
+        async posts(root, args, { user }) {
+            const { posts } = await User.findById(user.id).populate('posts').exec();
+            return posts;
         }
     },
     RootMutation: {
@@ -52,6 +53,13 @@ const resolvers = {
                 email: user.email
             }, process.env.SECRET_KEY, { expiresIn: '2w' });
 
+            context.res.cookie(process.env.COOKIE_NAME, token, {
+                resave: false,
+                saveUninitialized: true,
+                httpOnly: true,  // dont let browser javascript access cookie ever
+                secure: false, // only use cookie over https
+                ephemeral: true // delete this cookie while browser close 
+            });
             return await { token, user };
         },
         async createPost(root, { input }, { user }) {
@@ -65,6 +73,17 @@ const resolvers = {
             await User.findByIdAndUpdate(user.id, { posts: [...finishedPost.author.posts, finishedPost.id] });
 
             return await finishedPost;
+        }
+    },
+    Post: {
+        async author({ id }) {
+            return await User.findOne({ posts: id });
+        }
+    },
+    User: {
+        async posts({ id }) {
+            const { posts } = await User.findById(id).populate('posts').exec();
+            return posts;
         }
     }
 }

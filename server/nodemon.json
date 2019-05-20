@@ -4,6 +4,10 @@
         "MONGO_PASSWORD": "Password Here",
         "MONGO_DB": "cms-test",
         "MONGO_URL": "mongodb://127.0.0.1:27017/",
-        "SECRET_KEY": "secretkeyhere"
+        "SECRET_KEY": "secretkeyhere",
+        "SECRET_REFRESH_KEY": "secretrefreshkeyhere",
+        "COOKIE_NAME": "AUTH_TOKEN",
+        "COOKIE_REFRESH": "REFRESH_TOKEN",
+        "TOKEN_EXPIRE": "1w"
     }
 }

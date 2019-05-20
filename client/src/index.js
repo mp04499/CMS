@@ -10,7 +10,6 @@ import { BrowserRouter, Router } from "react-router-dom";
 import { ApolloProvider } from "react-apollo";
 import client from './apollo/Apollo';
 
-
 const history = createBrowserHistory();
 ReactDOM.render(
   <ApolloProvider client={client}>
