@@ -1,87 +1,105 @@
 const User = require('../db/models/user');
 const Post = require('../db/models/post');
-const argon2 = require('argon2');
-const jsonwebtoken = require('jsonwebtoken');
+const handlePass = require('../auth/handlePass');
+const { PubSub } = require('graphql-subscriptions');
+
+const POST_CHANNEL = 'POST_CHANNEL';
+const pubsub = new PubSub();
+
 
 const resolvers = {
     RootQuery: {
-        async user(root, { id }, context) {
+        user: async (root, { id }, context) => {
             return await User.findById(id);
         },
-        async users(root, args, context) {
+        users: async (root, args, context) => {
             return await User.find({});
         },
-        async me(root, args, { user }) {
+        me: async (root, args, { user }) => {
             if (!user)
                 throw new Error('You are not logged in');
 
             return await User.findById(user.id);
         },
-        async post(root, { id }, context) {
+        post: async (root, { id }, context) => {
             return await Post.findById(id);
         },
-        async posts(root, args, { user }) {
+        posts: async (root, args, { user }) => {
             const { posts } = await User.findById(user.id).populate('posts').exec();
             return posts;
         }
     },
     RootMutation: {
-        async createUser(root, { input }, context) {
-            const hash = await argon2.hash(input.password)
-            const newInput = await { ...input, password: hash };
+        createUser: async (root, { input }, context) => {
+            try {
+                const newInput = await handlePass.hashPass(input);
 
-            return await new User(newInput).save();
+                return await new User(newInput).save();
+            } catch (error) {
+                throw new Error(error);
+            }
         },
-        async updateUser(root, { id, input }, context) {
+        updateUser: async (root, { id, input }, context) => {
             return await User.findByIdAndUpdate(id, input);
         },
-        async deleteUser(root, { id }, context) {
+        deleteUser: async (root, { id }, context) => {
             return await User.findByIdAndDelete(id);
         },
-        async login(root, { input }, context) {
+        login: async (root, { input }, context) => {
             const user = await User.findOne({ email: input.email });
 
             if (!user)
                 throw new Error('Email was not found');
 
-            const valid = await argon2.verify(user.password, input.password);
-            if (!valid)
+            const isValid = await handlePass.isValid(input.password, user.password);
+
+            if (!isValid)
                 throw new Error('Passwords did not match');
 
-            const token = await jsonwebtoken.sign({
-                id: user.id,
-                email: user.email
-            }, process.env.SECRET_KEY, { expiresIn: '2w' });
+            try {
+                const token = await handlePass.createToken(user.id, user.email);
+                context.res.cookie(process.env.COOKIE_NAME, token, process.env.COOKIE_SETTINGS);
 
-            context.res.cookie(process.env.COOKIE_NAME, token, {
-                resave: false,
-                saveUninitialized: true,
-                httpOnly: true,  // dont let browser javascript access cookie ever
-                secure: false, // only use cookie over https
-                ephemeral: true // delete this cookie while browser close 
-            });
-            return await { token, user };
+                return { token, user };
+
+            } catch (error) {
+                throw new Error(error)
+            }
+
+
         },
-        async createPost(root, { input }, { user }) {
+        createPost: async (root, { input }, { user }) => {
+
+            if (!user)
+                throw new Error('Not logged in!')
+
             const post = await new Post({ message: input.message, author: user.id })
                 .save();
 
-            const finishedPost = await Post.findById(post.id)
+            const postAdded = await Post.findById(post.id)
                 .populate('author')
                 .exec();
 
-            await User.findByIdAndUpdate(user.id, { posts: [...finishedPost.author.posts, finishedPost.id] });
+            await User.findByIdAndUpdate(user.id, { posts: [...postAdded.author.posts, postAdded.id] });
 
-            return await finishedPost;
+            await pubsub.publish(POST_CHANNEL, { postCreated: postAdded })
+            console.log(pubsub);
+
+            return postAdded;
+        }
+    },
+    RootSubscription: {
+        postCreated: {
+            subscribe: () => pubsub.asyncIterator([POST_CHANNEL])
         }
     },
     Post: {
-        async author({ id }) {
+        author: async ({ id }) => {
             return await User.findOne({ posts: id });
         }
     },
     User: {
-        async posts({ id }) {
+        posts: async ({ id }) => {
             const { posts } = await User.findById(id).populate('posts').exec();
             return posts;
         }

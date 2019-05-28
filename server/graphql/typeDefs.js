@@ -33,6 +33,11 @@ type AuthPayload {
     user: User
 }
 
+type RootSubscription {
+    postCreated: Post!
+    postUpdated(id: ID!): Post
+}
+
 type RootQuery {
     user(id: ID!): User
     users: [User]
@@ -54,6 +59,7 @@ type RootMutation {
 schema {
     query: RootQuery
     mutation: RootMutation
+    subscription: RootSubscription
 }
 `;
 

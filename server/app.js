@@ -1,35 +1,18 @@
 const express = require('express');
-const graphqlHttp = require('express-graphql');
+const http = require('http');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const cors = require('cors');
 const { makeExecutableSchema } = require('graphql-tools');
-const expressjwt = require('express-jwt');
-const session = require('express-session');
 const authMiddleware = require('./auth/authMiddleware');
+const { ApolloServer } = require('apollo-server-express');
 require('./db/mongoose');
 
-const articlesRouter = require('./routes/articles');
 const typeDefs = require('./graphql/typeDefs');
 const resolvers = require('./graphql/resolvers');
 
 const app = express();
 
-// const authMiddleware = expressjwt({
-//     secret: process.env.SECRET_KEY,
-//     credentialsRequired: false,
-//     getToken: fromHeaderOrQuerystring = (req) => {
-//         if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
-//             return req.headers.authorization.split(' ')[1];
-//         } else if (req.query && req.query.token) {
-//             return req.query.token;
-//         }
-//         return null;
-//     }
-// });
-
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -41,16 +24,30 @@ const schema = makeExecutableSchema({
     resolvers
 });
 
-app.use('/articles', articlesRouter);
-
 app.use(authMiddleware);
-app.use('/graphql', graphqlHttp((req, res) => ({
-    schema: schema,
-    context: {
-        user: req.user || '',
-        res
-    },
-    graphiql: true
-})));
 
-module.exports = app;
+const server = new ApolloServer({
+    schema,
+    context: async ({ req, res, connection }) => {
+        if (connection)
+            return connection.context;
+
+        return {
+            user: req.user || '',
+            res
+        }
+    }
+});
+
+server.applyMiddleware({
+    app,
+    cors: { origin: 'http://localhost:3000', credentials: true }
+});
+
+const httpServer = http.createServer(app);
+server.installSubscriptionHandlers(httpServer);
+
+httpServer.listen(process.env.SERVER_PORT, () => {
+    console.log(`🚀 Server ready at http://localhost:${process.env.SERVER_PORT}${server.graphqlPath}`);
+    console.log(`🚀 Subscriptions ready at ws://localhost:${process.env.SERVER_PORT}${server.subscriptionsPath}`);
+});

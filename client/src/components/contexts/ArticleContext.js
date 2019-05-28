@@ -1,4 +1,4 @@
-import React, {createContext, useEffect, useState} from "react";
+import React, { createContext, useEffect, useState } from "react";
 import axios from "axios";
 
 export const ArticleContext = createContext();
@@ -10,7 +10,10 @@ export const ArticleProvider = props => {
 
   useEffect(() => {
     async function fetchdata() {
-      await callBackendAPI();
+      axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=d5342e381e0748ada294675b8bca5fef`)
+        .then(response => setArticles(response.data.articles))
+        .catch(error => console.log(error));
+
       setShowNews(false);
 
       if (showNews)
@@ -23,13 +26,8 @@ export const ArticleProvider = props => {
     }, 3000);
   }, [showNews]);
 
-  const callBackendAPI = () => {
-    axios.get("http://localhost:9000/articles?country=us")
-    .then(response => setArticles(response.data))
-  };
-
   return (
-    <ArticleContext.Provider value={{showNews, setShowNews, articles, setArticles}}>
+    <ArticleContext.Provider value={{ showNews, setShowNews, articles, setArticles }}>
       {props.children}
     </ArticleContext.Provider>
   )

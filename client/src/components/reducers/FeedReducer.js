@@ -1,12 +1,13 @@
-import uuid from 'uuid/v4';
-
 const reducer = (state, action) => {
   switch (action.type) {
-    case "ADD":
-      return [...state, {id: uuid(), name: action.name, at: action.at, text: action.text}];
+    case "SET":
+      return action.feeds;
 
     case "REMOVE":
       return state.filter(f => f.id !== action.id);
+
+    case "ADD":
+      return [...state, action.post];
 
     default:
       return state;

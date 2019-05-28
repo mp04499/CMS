@@ -4,10 +4,18 @@
         "MONGO_PASSWORD": "Password Here",
         "MONGO_DB": "cms-test",
         "MONGO_URL": "mongodb://127.0.0.1:27017/",
+        "SERVER_PORT": 9000,
         "SECRET_KEY": "secretkeyhere",
         "SECRET_REFRESH_KEY": "secretrefreshkeyhere",
         "COOKIE_NAME": "AUTH_TOKEN",
         "COOKIE_REFRESH": "REFRESH_TOKEN",
+        "COOKIE_SETTINGS": {
+            "resave": false,
+            "saveUninitialized": true,
+            "httpOnly": true,
+            "secure": false,
+            "ephemeral": true
+        },
         "TOKEN_EXPIRE": "1w"
     }
 }

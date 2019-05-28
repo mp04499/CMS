@@ -1,7 +1,6 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import useInput from '../components/hooks/useInput';
 import '../css/Home.css';
-import { UserContext } from '../components/contexts/UserContext';
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
 
@@ -18,14 +17,8 @@ const LOGIN = gql`
 
 const Home = () => {
 
-  const { setUser } = useContext(UserContext);
   const [email, updateEmail] = useInput('');
   const [password, updatePassword] = useInput('');
-
-  const saveData = async data => {
-    const { user } = data;
-    setUser(user);
-  }
 
   return (
     <div className={"Home container"}>
@@ -53,7 +46,6 @@ const Home = () => {
           <Mutation
             mutation={LOGIN}
             variables={{ email, password }}
-            onCompleted={data => saveData(data.login)}
           >
             {mutation => (
 

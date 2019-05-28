@@ -12,13 +12,14 @@ import client from './apollo/Apollo';
 
 const history = createBrowserHistory();
 ReactDOM.render(
-  <ApolloProvider client={client}>
-    <Router history={history}>
-      <BrowserRouter>
+  <Router history={history}>
+    <BrowserRouter>
+      <ApolloProvider client={client}>
         <App />
-      </BrowserRouter>
-    </Router>
-  </ApolloProvider>, document.getElementById('root'));
+      </ApolloProvider>
+    </BrowserRouter>
+  </Router>
+  , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
