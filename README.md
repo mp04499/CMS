@@ -12,3 +12,4 @@
 -------------------------------------------------------
 # Gifs & Images
 ![Posts Live Updates](https://i.imgur.com/y3yOMhw.gif)
+![Page Loading](https://i.imgur.com/693Dct8.gif)
