@@ -8,3 +8,7 @@
 - Apollo Client
 - Mongoose
 - Visual Studio Code
+
+-------------------------------------------------------
+# Gifs & Images
+![Posts Live Updates](https://i.imgur.com/y3yOMhw.gif)
