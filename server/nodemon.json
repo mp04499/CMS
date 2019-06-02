@@ -3,7 +3,7 @@
         "MONGO_USER": "User Here",
         "MONGO_PASSWORD": "Password Here",
         "MONGO_DB": "cms-test",
-        "MONGO_URL": "mongodb://127.0.0.1:27017/",
+        "MONGO_URL": "mongodb://db:27017/",
         "SERVER_PORT": 9000,
         "SECRET_KEY": "secretkeyhere",
         "SECRET_REFRESH_KEY": "secretrefreshkeyhere",

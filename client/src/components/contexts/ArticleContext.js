@@ -9,7 +9,7 @@ export const ArticleProvider = props => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    async function fetchdata() {
+    async function fetchData() {
       axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=d5342e381e0748ada294675b8bca5fef`)
         .then(response => setArticles(response.data.articles))
         .catch(error => console.log(error));
@@ -22,7 +22,7 @@ export const ArticleProvider = props => {
     }
 
     setTimeout(() => {
-      fetchdata();
+      fetchData();
     }, 3000);
   }, [showNews]);
 

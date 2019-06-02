@@ -6,6 +6,14 @@ const { PubSub } = require('graphql-subscriptions');
 const POST_CHANNEL = 'POST_CHANNEL';
 const pubsub = new PubSub();
 
+const cookieOptions = {
+    resave: false,
+    saveUninitialized: true,
+    httpOnly: true,
+    secure: false,
+    ephemeral: true
+};
+
 
 const resolvers = {
     RootQuery: {
@@ -58,7 +66,7 @@ const resolvers = {
 
             try {
                 const token = await handlePass.createToken(user.id, user.email);
-                context.res.cookie(process.env.COOKIE_NAME, token, process.env.COOKIE_SETTINGS);
+                context.res.cookie(process.env.COOKIE_NAME, token, cookieOptions);
 
                 return { token, user };
 

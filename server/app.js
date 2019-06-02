@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const http = require('http');
 const path = require('path');
@@ -6,7 +7,7 @@ const logger = require('morgan');
 const { makeExecutableSchema } = require('graphql-tools');
 const authMiddleware = require('./auth/authMiddleware');
 const { ApolloServer } = require('apollo-server-express');
-require('./db/mongoose');
+const mongoose = require('./db/mongoose');
 
 const typeDefs = require('./graphql/typeDefs');
 const resolvers = require('./graphql/resolvers');
@@ -41,13 +42,26 @@ const server = new ApolloServer({
 
 server.applyMiddleware({
     app,
-    cors: { origin: 'http://localhost:3000', credentials: true }
+    cors: { origin: `http://localhost`, credentials: true }
 });
 
 const httpServer = http.createServer(app);
 server.installSubscriptionHandlers(httpServer);
 
+mongoose();
 httpServer.listen(process.env.SERVER_PORT, () => {
-    console.log(`🚀 Server ready at http://localhost:${process.env.SERVER_PORT}${server.graphqlPath}`);
-    console.log(`🚀 Subscriptions ready at ws://localhost:${process.env.SERVER_PORT}${server.subscriptionsPath}`);
+    console.log(
+        `🚀 Server ready! 
+        Container: ${process.env.SERVER_CONTAINER}
+        Port: ${process.env.SERVER_PORT}
+        GraphQL Endpoint: ${server.graphqlPath}
+        \n
+        `);
+    console.log(
+        `🚀 Subscriptions ready! 
+        Container: ${process.env.SERVER_CONTAINER}
+        Port: ${process.env.SERVER_PORT}
+        Subscription Endpoint: ${server.subscriptionsPath}
+        \n
+        `);
 });
