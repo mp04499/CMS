@@ -1,7 +1,7 @@
 {
     "env": {
-        "MONGO_USER": "User Here",
-        "MONGO_PASSWORD": "Password Here",
+        "MONGO_USER": "root",
+        "MONGO_PASSWORD": "password",
         "MONGO_DB": "cms-test",
         "MONGO_URL": "mongodb://db:27017/",
         "SERVER_PORT": 9000,

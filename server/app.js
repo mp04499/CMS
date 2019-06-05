@@ -42,7 +42,7 @@ const server = new ApolloServer({
 
 server.applyMiddleware({
     app,
-    cors: { origin: `http://localhost`, credentials: true }
+    cors: { origin: `http://${process.env.SERVER_HOST}`, credentials: true }
 });
 
 const httpServer = http.createServer(app);

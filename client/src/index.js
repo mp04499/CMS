@@ -9,6 +9,7 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Router } from "react-router-dom";
 import { ApolloProvider } from "react-apollo";
 import client from './apollo/Apollo';
+require('dotenv').config();
 
 const history = createBrowserHistory();
 ReactDOM.render(
